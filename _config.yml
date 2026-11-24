@@ -30,7 +30,7 @@ timezone: Europe/Madrid
 
 
 baseurl: "/myblog" # the subpath of your site, e.g. /blog
-url: "https://percygh8.github.io/myblog/" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://percygh8.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 
 
 
