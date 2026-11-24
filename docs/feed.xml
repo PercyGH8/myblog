@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="es"><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://percygh8.github.io/myblog/feed.xml" rel="self" type="application/atom+xml" /><link href="https://percygh8.github.io/myblog/" rel="alternate" type="text/html" hreflang="es" /><updated>2026-11-24T12:00:53+01:00</updated><id>https://percygh8.github.io/myblog/feed.xml</id><title type="html">Apuntes de IAW</title><subtitle>Blog de prácticas del módulo Implantación de Aplicaciones Web: servidores web, contenedores y despliegue.</subtitle><author><name>Percy Guitens</name></author><entry><title type="html">Mi primer contenedor Docker</title><link href="https://percygh8.github.io/myblog/contenedores/2026/10/15/mi-primer-contenedor-docker.html" rel="alternate" type="text/html" title="Mi primer contenedor Docker" /><published>2026-10-15T21:00:00+02:00</published><updated>2026-10-15T21:00:00+02:00</updated><id>https://percygh8.github.io/myblog/contenedores/2026/10/15/mi-primer-contenedor-docker</id><content type="html" xml:base="https://percygh8.github.io/myblog/contenedores/2026/10/15/mi-primer-contenedor-docker.html"><![CDATA[<p><img src="/myblog/assets/images/posts/docker/portada-docker.jpg" alt="page.imagen_alt" /> 
+Levantamos un servidor Nginx dentro de un contenedor en un solo comando.</p>
+<h2 id="arrancar-el-contenedor">Arrancar el contenedor</h2>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker run <span class="nt">-d</span> <span class="nt">--name</span> web <span class="nt">-p</span> 8080:80 nginx
+curl <span class="nt">-I</span> http://localhost:8080
+</code></pre></div></div>
+<h2 id="cómo-funciona">Cómo funciona</h2>
+<p>(insertar imágen docker-arquitectura.png).</p>]]></content><author><name>Percy Guitens</name></author><category term="contenedores" /><category term="docker" /><category term="nginx" /><summary type="html"><![CDATA[Levantamos un servidor Nginx dentro de un contenedor en un solo comando. Arrancar el contenedor docker run -d --name web -p 8080:80 nginx curl -I http://localhost:8080 Cómo funciona (insertar imágen docker-arquitectura.png).]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://percygh8.github.io/myblog/assets/images/posts/docker/portada-docker.jpg" /><media:content medium="image" url="https://percygh8.github.io/myblog/assets/images/posts/docker/portada-docker.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Apache frente a Nginx</title><link href="https://percygh8.github.io/myblog/servidores/2026/10/08/apache-frente-a-nginx.html" rel="alternate" type="text/html" title="Apache frente a Nginx" /><published>2026-10-08T17:30:00+02:00</published><updated>2026-10-08T17:30:00+02:00</updated><id>https://percygh8.github.io/myblog/servidores/2026/10/08/apache-frente-a-nginx</id><content type="html" xml:base="https://percygh8.github.io/myblog/servidores/2026/10/08/apache-frente-a-nginx.html"><![CDATA[<p>Comparamos los dos servidores web más usados en Linux.
+| Característica | Apache | Nginx |
+|————————|——————————-|————————|
+| Modelo | Procesos / hilos (MPM) | Eventos, asíncrono |
+| Configuración | <code class="language-plaintext highlighter-rouge">.htaccess</code> por carpeta | Centralizada |
+| Contenido estático | Bueno | Muy eficiente |
+5
+Si aún no tienes Apache instalado, sigue el
+<a href="/myblog/servidores/2026/10/01/instalar-apache-en-ubuntu.md.%20">post anterior</a>.</p>]]></content><author><name>Percy Guitens</name></author><category term="servidores" /><category term="apache" /><category term="nginx" /><category term="comparativa" /><summary type="html"><![CDATA[Comparamos los dos servidores web más usados en Linux. | Característica | Apache | Nginx | |————————|——————————-|————————| | Modelo | Procesos / hilos (MPM) | Eventos, asíncrono | | Configuración | .htaccess por carpeta | Centralizada | | Contenido estático | Bueno | Muy eficiente | 5 Si aún no tienes Apache instalado, sigue el post anterior.]]></summary></entry><entry><title type="html">Instalar Apache en Ubuntu Server</title><link href="https://percygh8.github.io/myblog/servidores/2026/10/01/instalar-apache-en-ubuntu.md.%20" rel="alternate" type="text/html" title="Instalar Apache en Ubuntu Server" /><published>2026-10-01T12:00:00+02:00</published><updated>2026-10-01T12:00:00+02:00</updated><id>https://percygh8.github.io/myblog/servidores/2026/10/01/instalar-apache-en-ubuntu.md</id><content type="html" xml:base="https://percygh8.github.io/myblog/servidores/2026/10/01/instalar-apache-en-ubuntu.md.%20"><![CDATA[En esta práctica instalamos el servidor web Apache y comprobamos que responde en el puerto 
+80.
+## Instalación
+```bash
+sudo apt update
+sudo apt install apache2
+sudo systemctl enable --now apache2
+```
+## Comprobación
+```bash
+systemctl status apache2
+curl -I http://localhost
+```]]></content><author><name>Percy Guitens</name></author><category term="servidores" /><category term="apache" /><category term="ubuntu" /><category term="http" /><summary type="html"><![CDATA[En esta práctica instalamos el servidor web Apache y comprobamos que responde en el puerto 80. ## Instalación ```bash sudo apt update sudo apt install apache2 sudo systemctl enable --now apache2 ``` ## Comprobación ```bash systemctl status apache2 curl -I http://localhost ```]]></summary></entry></feed>
